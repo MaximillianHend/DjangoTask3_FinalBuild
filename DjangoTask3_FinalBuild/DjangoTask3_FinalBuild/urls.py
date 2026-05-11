@@ -17,10 +17,25 @@ Including another URLconf
 """
 
 # Uncomment next two lines to enable admin:
-#from django.contrib import admin
-#from django.urls import path
+from django.contrib import admin
+from django.urls import path
+from django.urls import include, re_path
+<<<<<<< HEAD
+#from django.views.generic.base import TemplateView #--------------------------------------------
+=======
 
-urlpatterns = [
-    # Uncomment the next line to enable the admin:
-    #path('admin/', admin.site.urls)
+import MyApp.views
+
+
+urlpatterns = [    
+    path('admin/', admin.site.urls),
+    path("", MyApp.views.index, name="index"),
+    #path("about-us", MyApp.views.about_us, name="about_us"),
+    #path("courses", MyApp.views.courses, name="courses"),
+    #path("courses/json", MyApp.views.courses_json, name="courses_json"),
+    #path("course/<str:course_name>", MyApp.views.course, name="course"),
+    #path("new-course", MyApp.views.new_course, name="new_course"),
+    #re_path(r'^$', MyApp.views.index, name='index'),
+    re_path(r'^home$', MyApp.views.index, name='home'),
+    #re_path(r'input', MyApp.views.input_view, name='input'),
 ]
