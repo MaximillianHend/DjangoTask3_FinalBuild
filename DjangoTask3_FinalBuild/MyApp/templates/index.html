@@ -1,3 +1,125 @@
+<html>
+
+<p><a href="{% url 'teacherinput' %}">Input new Teachers</a></p>
+
+<p><a href="{% url 'schoolinput' %}">Input Schools</a></p>
+
+<p><a href="{% url 'courseinput' %}">Input Courses</a></p>
+
+<p><a href="{% url 'subjectinput' %}">Input Subjects</a></p>
+
+
+<body>
+    <strong>Teachers</strong>
+    {% if content %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Teaching Area</th>
+        </tr>
+        {% for teach in content %}
+        <tr>
+            <td>{{teach.Name}}</td>
+            <td>{{teach.Area}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% else %}
+    <strong>No data!!</strong>
+    {% endif %}
+</body>
+
+
+<head>
+    <title>Schools</title>
+</head>
+
+<body>
+
+    <strong>Schools</strong>
+
+    {% if content %}
+    <table>
+        <tr>
+            <th>School</th>
+            <th>Location</th>
+        </tr>
+        {% for sch in content %}
+        <tr>
+            <td>{{ sch.School }}</td>
+            <td>{{ sch.Location}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% else %}
+    <strong>No data!!</strong>
+    {% endif %}
+</body>
+
+
+
+<head>
+    <title>Courses</title>
+</head>
+
+<body>
+
+    <strong>Courses</strong>
+
+    {% if content %}
+    <table>
+        <tr>
+            <th>Course</th>
+            <th>Scaling</th>
+            <th>Teachers</th>
+        </tr>
+        {% for crs in content %}
+        <tr>
+            <td>{{ crs.Course }}</td>
+            <td>{{ crs.Scaling}}</td>
+            <td>{{ crs.Teachers}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% else %}
+    <strong>No data!!</strong>
+    {% endif %}
+</body>
+
+<head>
+    <title>Subject</title>
+</head>
+
+<body>
+
+    <strong>Subjects</strong>
+
+    {% if content %}
+    <table>
+        <tr>
+            <th>Subjects</th>
+        </tr>
+        {% for sub in content %}
+        <tr>
+            <td>{{ sub.Subjects }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% else %}
+    <strong>No data!!</strong>
+    {% endif %}
+
+
+</body>
+
+</html>
+
+
+<!--  
 <body>
     <strong>Teachers:</strong>
     {% if content %}
@@ -20,3 +142,5 @@
     <p><a href="{% url 'input' %}">Input new Teachers</a></p>
 
 </body>
+
+-->

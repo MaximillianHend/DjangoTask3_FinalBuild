@@ -16,3 +16,4 @@ class course(models.Model):
 
 class subjects(models.Model): 
     Subjects = models.CharField(max_length=25)
+
